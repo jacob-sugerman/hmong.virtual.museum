@@ -1,0 +1,1116 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="../../../dist/aframe-master.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="../../dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+
+    <script>
+      AFRAME.registerComponent("videohandler", {
+        schema: {
+          src: { type: "string", default: "" },
+        },
+
+        init: function () {
+          let el = this.el;
+          let vid = document.querySelector(this.data.src);
+          el.addEventListener("click", function () {
+            vid.play();
+          });
+        },
+      });
+    </script>
+
+    <script>
+      AFRAME.registerComponent("videohandler2", {
+        schema: {
+          src: { type: "string", default: "" },
+        },
+
+        init: function () {
+          let el = this.el;
+          let vid = document.querySelector(this.data.src);
+          el.addEventListener("mouseleave", function () {
+            vid.pause();
+          });
+        },
+      });
+    </script>
+  </head>
+
+  <body>
+    <a-scene vr-mode-ui="enabled: false">
+      <a-assets>
+        <img
+          id="rocks"
+          src="https://cdn.glitch.com/700a0a7c-90fb-4baf-93cc-5d0a217d1e29%2Fbrick_medieval_0126_01.jpg?v=1627613898072"
+          crossorigin="anonymous"
+        />
+        <img
+          id="woodfloor"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Ff2ee9d74-9726-4bed-9c30-2d49d6391dee_dark%20wood%20texture.jpeg?v=1634939897527"
+          crossorigin="anonymous"
+          access-control-allow-origin="*"
+        />
+
+        <img
+          id="disp"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FMarble020_4K_Displacement.jpg?v=1636675354011"
+          crossorigin="anonymous"
+          access-control-allow-origin="*"
+        />
+        <img
+          id="wall"
+          src="https://cdn.glitch.com/700a0a7c-90fb-4baf-93cc-5d0a217d1e29%2Fpexels-lorenzo-242236.jpg?v=1627419576482"
+          crossorigin="anonymous"
+        />
+        <img
+          id="starsky"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FStellarium3.jpeg?v=1633995506383"
+          crossorigin="anonymous"
+        />
+        <img
+          id="marble"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FMarble020_4K_Color.jpg?v=1636675347816"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Fqeej-image_orig.jpeg?v=1626819293939"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso2"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Fflute-image_orig.jpeg?v=1626819293821"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso3"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Fhoe-digger-image_orig.jpeg?v=1626819294552"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso4"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Ffree-reed-pipe-image_orig.jpeg?v=1626819294053"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso5"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Fmachete-image_orig.jpeg?v=1626819294155"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso6"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Fhoe-image_orig.jpeg?v=1626819294101"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso7"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Fmouth-harp-image_orig.jpeg?v=1626819294617"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso8"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Ftwo-string-violin-image_orig.jpeg?v=1626819294458"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso9"
+          src="https://cdn.glitch.com/33420c2b-5e77-4d25-8b4a-b84815747f4f%2Frice-sickle-image_orig.jpeg?v=1626819293917"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso10"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FTaus.png?v=1636701253655"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="picasso11"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FRiam.png?v=1636941697101"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="picasso12"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FLub.png?v=1637638523993"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso13"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FHneev.png?v=1637638580848"
+          crossorigin="anonymous"
+        />
+        <img
+          id="picasso14"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FPhom.png?v=1637977208395"
+          crossorigin="anonymous"
+        />
+        <img
+          id="ceiling"
+          src="https://cdn.glitch.com/700a0a7c-90fb-4baf-93cc-5d0a217d1e29%2Froof_0027_01.jpg?v=1627605423518"
+          crossorigin="anonymous"
+        />
+        <audio
+          id="song"
+          src="https://cdn.glitch.com/96ab1f6e-16b9-43c1-9df3-fbe9b24a7490%2FLeft%20and%20Leaving.mp3?1549919550870"
+          preload="auto"
+          crossorigin="anonymous"
+        ></audio>
+        <audio
+          id="sound"
+          src="https://cdn.glitch.com/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fsfx3.mp3?v=1632779705249"
+          preload="auto"
+          crossorigin="anonymous"
+        ></audio>
+        <audio
+          id="sound2"
+          src="https://cdn.glitch.com/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fsfx22.mp3?v=1632208936839"
+          preload="auto"
+          crossorigin="anonymous"
+        ></audio>
+        <video
+          id="video1"
+          preload="auto"
+          src="https://cdn.glitch.com/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fyt1s.com%20-%20Wang%20Sue%20Lee%20Plays%20a%20Song%20on%20the%20TwoString%20Violin%202006_360p.mp4?v=1629489405409"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video2"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fliagg.mp4?v=1633998224493"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video3"
+          preload="auto"
+          src="https://cdn.glitch.com/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fyt1s.com%20-%20KIAB%20TSHUAB%20NCAS%20RHIAV%20KEV%20HLUB%20%20HMOOB%20TOJ%20SIAB%202018_480p.mp4?v=1632780483444"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video4"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2FHlau.mp4?v=1633647207449"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video5"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fkhawb.mp4?v=1633823405958"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video6"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fsickle.mp4?v=1633994621008"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video9"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fyt1s.com%20-%20Tu%20no%20yog%20kv%20txivpeb%20yawg%20rab%20phom%20hmoob%20ntev%209%20do%20txhai2019_1080p.mp4?v=1637977233167"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video8"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fcrossboq.mp4?v=1639624348115"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video10"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a/lub.mp4?v=1639779507439"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video11"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a/freed.mp4?v=1640576037894"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video12"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a/knife.mp4?v=1640834635039"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video13"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a/taus.mp4?v=1640830012667"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video14"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a/flute.mp4?v=1640830826959"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="video15"
+          preload="auto"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a/kang2.mp4?v=1641236645059"
+          crossorigin="anonymous"
+        ></video>
+        <a-asset-item
+          id="qeej"
+          src="https://cdn.glitch.me/0c79bee6-7850-464e-b436-eff1f0b34c8a%2Fqeej2.gltf?v=1636850185239"
+          response-type="arraybuffer"
+          crossorigin="anonymous"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        id="camera"
+        position="0 5.4 0"
+        camera
+        look-controls
+        wasd-controls="acceleration:200"
+      >
+        <a-entity id="curs" cursor="rayOrigin: mouse"></a-entity>
+      </a-entity>
+
+      <a-entity
+        geometry="primitive:plane"
+        material="src:https://cdn.glitch.global/9eee3f87-b33c-4ff9-97b5-b3cf7dba99e9/55455?v=1641505678753"
+        position="15.5 4 7"
+        scale="2 .7 1"
+        rotation="0 90 0"
+      ></a-entity>
+
+      <a-entity
+        light="type: directional; color: #FFF; intensity: .8"
+        position="0 6 0"
+      ></a-entity>
+
+      <a-entity light="type: ambient; color: #FFF; intensity: .9"></a-entity>
+
+      <a-entity
+        id="qeejlight"
+        light="type:spot; angle:10; intensity:1.5; castShadow:true"
+        position="-3 10 10"
+        rotation="-90 0 0"
+        visible="false"
+      ></a-entity>
+
+      <a-sky id="sky" src="#starsky"></a-sky>
+
+      <a-entity
+        id="hmong"
+        gltf-model="#qeej"
+        scale=".6 .6 .6"
+        position="-3 3 10"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear"
+        shadow="cast: true"
+        material="sphericalEnvMap: #starsky; roughness: -1"
+        event-set__enter="_event:mouseenter; _target:#qeejlight; visible:true"
+        event-set__leave="_event:mouseleave; _target:#qeejlight; visible:false"
+      >
+      </a-entity>
+
+      <a-entity
+        geometry="primitive:cylinder; radius: .7"
+        position="-3 .5 10"
+        rotation="0 0 0"
+        scale="1 3 1"
+        material="sphericalEnvMap:#starsky;roughness:-5; metalness:1"
+        shadow="receive: true"
+      >
+      </a-entity>
+
+      <a-mixin
+        id="fading"
+        animation__fadein="property: material.opacity; from: 0; to: 1; dur: 2500; startEvents: fadein"
+        animation__fadeout="property: material.opacity; to: 0; dur: 400; startEvents: fadeout"
+      ></a-mixin>
+      <a-mixin id="audio1" sound="src:#sound; volume: 10; on: click"></a-mixin>
+      <a-mixin id="audio2" sound="src:#sound2; volume: 7; on: click"></a-mixin>
+      <a-mixin
+        id="frames"
+        geometry="primitive:plane; width:3; height:4"
+        material="sphericalEnvMap:#starsky;roughness:0; metalness:1"
+      ></a-mixin>
+
+      <a-entity>
+        <a-plane
+          id="floor"
+          position="0 -1.2 0"
+          rotation="-90 90 0"
+          width="30"
+          height="30"
+          material="src:#woodfloor; metalness: .5"
+          repeat="4 4"
+          shadow="receive: true"
+        ></a-plane>
+        <a-plane
+          position="0 5 -15"
+          width="30"
+          height="15"
+          src="#wall"
+        ></a-plane>
+        <a-plane
+          position="-2.5 5 15"
+          rotation="0 180 0"
+          width="25"
+          height="15"
+          src="#wall"
+        ></a-plane>
+        <a-plane
+          position="-15 5 0"
+          rotation="0 90 0"
+          width="30"
+          height="15"
+          src="#wall"
+        ></a-plane>
+        <a-plane
+          position="15 5 0"
+          rotation="0 -90 0"
+          width="30"
+          height="15"
+          src="#wall"
+        ></a-plane>
+        <a-plane
+          id="ceiling1"
+          position="0 15 0"
+          scale="1 1 1"
+          width="30"
+          height="30"
+          rotation="90 0 0"
+          src="#wall"
+          visible="true"
+        ></a-plane>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay"
+        class="homeworld"
+        position="-14.9 5 10"
+        rotation="0 90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting"
+          src="#picasso"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText10; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText10; visible: false"
+          proxy-event__text="event: mouseenter; to: #cylinderText10; as: fadein2"
+          videohandler="src: #video15"
+          videohandler2="src: #video15"
+          event-set__click="_event: click; _target: #kang; visible:true"
+          proxy-event__enter="event: click; to: #kang; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #kang; as: fadeout"
+          mixin="audio1"
+        ></a-plane>
+
+        <a-entity
+          id="kang"
+          material="shader:flat; src:#video15"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 -.01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText10"
+          text="align: center; width: 10; wrapCount: 40; color: black; value:Qeej. Made with wood, bamboo, leather, metal, plastic and string, the Qeej has six bamboo pipes, which are curved and set into a wooden wind chest. The Qeej serves two purposes: 1) at Hmong funerals, its melody is used to guide the deceased person to the spirit world, and 2) at festivals, young people perform it, displaying musical and acrobatic skills for entertainment."
+          visible="false"
+          position="0 -3.9 0"
+          animation="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3.5 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay2"
+        class="homeworld"
+        position="-14.9 5 -5"
+        rotation="0 90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting2"
+          src="#picasso2"
+          position="0 0 .1"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText9; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText9; visible: false"
+          proxy-event__text="event: mouseenter; to: #cylinderText9; as: fadein2"
+          videohandler="src: #video14"
+          videohandler2="src: #video14"
+          event-set__click="_event: click; _target: #flute; visible:true"
+          proxy-event__enter="event: click; to: #flute; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #flute; as: fadeout"
+          mixin="audio1"
+        ></a-plane>
+
+        <a-entity
+          id="flute"
+          material="shader:flat; src:#video14"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 0"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText9"
+          text="align: center; width: 10; wrapCount: 40; color: black; value:Hmong Flute (Nploog). Made of bamboo with a brass reed, the Hmong flute instrument consists of a narrow bamboo tube with six finger holes in the front at the lower end, and one open curve at the top end. The mouth is curved where the brass reed is inserted."
+          visible="false"
+          position="0 -3.6 0"
+          animation="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3.6 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay3"
+        position="-10 5 -14.9"
+        rotation="0 0 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting3"
+          src="#picasso3"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText8; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText8; visible: false"
+          videohandler="src: #video5"
+          videohandler2="src: #video5"
+          event-set__click="_event: click; _target: #hoe; visible:true"
+          proxy-event__enter="event: click; to: #hoe; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #hoe; as: fadeout"
+          proxy-event__text="event: mouseenter; to: #cylinderText8; as: fadein2"
+          mixin="audio1"
+        ></a-plane>
+
+        <a-entity
+          id="hoe"
+          material="shader:flat; src:#video5;"
+          geometry="primitive: plane; width:6; height: 5"
+          position="0 4.7 0"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText8"
+          visible="false"
+          text="align: center; width: 10; color: black; value:Hoe Digger (Tuam Txhob). Made with a wood handle and steel metal, this tool is used as a digging implement to make holes for posts, etc."
+          position="0 -3 0"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; from:1; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay4"
+        position="-14.9 5 -10"
+        rotation="0 90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting4"
+          src="#picasso4"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText7; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText7; visible: false"
+          proxy-event__text="event: mouseenter; to: #cylinderText7; as: fadein2"
+          videohandler="src: #video11"
+          videohandler2="src: #video11"
+          event-set__click="_event: click; _target: #reed; visible:true"
+          proxy-event__enter="event: click; to: #reed; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #reed; as: fadeout"
+          mixin="audio1"
+        ></a-plane>
+
+        <a-entity
+          id="reed"
+          material="shader:flat; src:#video11"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 .01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText7"
+          text="align: center; width: 10; color: black; value:Free Reed Pipe (Raj Npliam). Made with bamboo, cane, and a brass reed, this instrument has six finger holes in the front and one in the back. A brass reed is inserted in the side of the pipe and covered by a cane wrapping, which slides down the pipe to allow playing. Young men used this instrument to communicate in secret during courtship."
+          visible="false"
+          position="0 -4 .01"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light
+        ></a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay5"
+        class="homeworld"
+        position="10 5 -14.9"
+        rotation="0 0 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting5"
+          src="#picasso5"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText0; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText0; visible: false"
+          videohandler="src: #video2"
+          videohandler2="src: #video2"
+          event-set__click="_event: click; _target: #sickle; visible:true"
+          proxy-event__enter="event: click; to: #sickle; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #sickle; as: fadeout"
+          proxy-event__text="event: mouseenter; to: #cylinderText0; as: fadein2"
+          mixin="audio1"
+        ></a-plane>
+
+        <a-entity
+          id="sickle"
+          material="shader:flat; src:#video2"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 0"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText0"
+          visible="false"
+          text="align: center; width: 10; color: black; value:Machete (Txuas). Made with a wood handle and steel metal, this handmade tool is used for slashing crop fields, cutting small trees, clearing bushes from a pathway, and digging out a tree's roots after a field is burned."
+          position="0 -3.3 0"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; from:1; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+      <a-entity
+        id="picassodisplay6"
+        class="homeworld"
+        position="0 5 -14.9"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting6"
+          src="#picasso6"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__6="_event: mouseenter; _target: #cylinderText5; visible: true"
+          event-set__61="_event: mouseleave; _target: #cylinderText5; visible: false"
+          videohandler="src: #video4"
+          videohandler2="src: #video4"
+          event-set__click="_event: click; _target: #hlau; visible:true"
+          proxy-event__enter="event: click; to: #hlau; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #hlau; as: fadeout"
+          proxy-event__text="event: mouseenter; to: #cylinderText5; as: fadein2"
+          mixin="audio1"
+        >
+        </a-plane>
+
+        <a-entity
+          id="hlau"
+          material="shader:flat; src:#video4"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText5"
+          text="align: center; width: 10; color: black; value: Hoe (Hlau). This tool is used to hoe and scrape weeds out of farming fields before planting. It can also be used to harvest tubers like Cassava (Qos), as seen in this video."
+          visible="false"
+          position="0 -3.1 0.01"
+          animation__z="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__x="property: components.text.material.uniforms.opacity.value; from:1; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay7"
+        position="-14.9 5 5"
+        rotation="0 90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting7"
+          src="#picasso7"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText4; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText4; visible: false"
+          videohandler="src: #video3"
+          videohandler2="src: #video3"
+          event-set__click="_event: click; _target: #ncas; visible:true"
+          proxy-event__enter="event: click; to: #ncas; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #ncas; as: fadeout"
+          proxy-event__text="event: mouseenter; to: #cylinderText4; as: fadein2"
+          mixin="audio1"
+        ></a-plane>
+
+        <a-entity
+          id="ncas"
+          material="shader:flat; src:#video3"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 0"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText4"
+          text="align: center; width: 10; color: black; value: Mouth Harp (Ncas). Made with brass, bamboo, and string. The player holds the brass blade between their lips and plucks it with their thumb. Young people traditionally used this instrument to communicate in secret during the courtship period."
+          visible="false"
+          position="0 -3.5 .01"
+          animation__v="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__c="property: components.text.material.uniforms.opacity.value; from:1; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3.2 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay8"
+        position="-14.9 5 0"
+        rotation="0 90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting8"
+          src="#picasso8"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter2="_event: mouseenter; _target: #cylinderText3; visible: true"
+          event-set__leave2="_event: mouseleave; _target: #cylinderText3; visible: false"
+          event-set__enter3="_event: mouseenter; _target: #light6; visible: true"
+          event-set__leave3="_event: mouseleave; _target: #light6; visible: false"
+          event-set__click="_event: click; _target: #violin; visible:true"
+          videohandler="src: #video1"
+          videohandler2="src: #video1"
+          proxy-event__enter="event: click; to: #violin; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #violin; as: fadeout"
+          proxy-event__text="event: mouseenter; to: #cylinderText3; as: fadein2"
+          mixin="audio1"
+        ></a-plane>
+        <a-entity
+          id="violin"
+          material="shader:flat; src:#video1"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 .01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText3"
+          visible="false"
+          text="align: center; width: 10; color: black; value: Two-String Violin (Xim Xau). Made from wood, coconut shells, plastic, wire, string and horsehair. The Hmong violin is used for playing melodies for both amusement and courtship purposes."
+          position="0 -3.2 .01"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; from:1; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay9"
+        position="5 5 -14.9"
+        rotation="0 0 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting9"
+          src="#picasso9"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #cylinderText2; visible: true"
+          event-set__leave="_event: mouseleave; _target: #cylinderText2; visible: false"
+          event-set__down="_event: click; _target: #liag; visible:true"
+          proxy-event__text="event: mouseenter; to: #cylinderText2; as: fadein2"
+          proxy-event__enter="event: click; to: #liag; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #liag; as: fadeout"
+          videohandler="src: #video6"
+          videohandler2="src: #video6"
+          mixin="audio1"
+        >
+        </a-plane>
+        <a-entity
+          id="liag"
+          material="shader:flat; src:#video6"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 .01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="cylinderText2"
+          text="align: center; width: 10; wrapCount: 39.5; color: black; value: Rice Sickle (Liag). Made of wood and steel, this tool is used for cutting grains, clearing brush, and busheling food for the purpose of raising animals."
+          visible="false"
+          position="0 -3 .01"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay10"
+        position="14.9 5 5"
+        rotation="0 -90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting10"
+          src="#picasso10"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #Text7; visible: true"
+          event-set__leave="_event: mouseleave; _target: #Text7; visible: false"
+          event-set__down="_event: click; _target: #taus; visible:true"
+          proxy-event__text="event: mouseenter; to: #Text7; as: fadein2"
+          proxy-event__enter="event: click; to: #taus; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #taus; as: fadeout"
+          videohandler="src: #video13"
+          videohandler2="src: #video13"
+          mixin="audio1"
+        >
+        </a-plane>
+        <a-entity
+          id="taus"
+          material="shader:flat; src:#video13"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 -.01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="Text7"
+          visible="false"
+          position="0 -3 .01"
+          text="align: center; width: 10; color: black; value: Axe (Taus). Made with a wood handle and steel. This handmade tool is used for cutting trees, splitting firewood, and shingling."
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light>
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay11"
+        position="14.9 5 0"
+        rotation="0 -90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting11"
+          src="#picasso11"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #Text8; visible: true"
+          event-set__leave="_event: mouseleave; _target: #Text8; visible: false"
+          event-set__down="_event: click; _target: #nriam; visible:true"
+          proxy-event__text="event: mouseenter; to: #Text8; as: fadein2"
+          proxy-event__enter="event: click; to: #nriam; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #nriam; as: fadeout"
+          videohandler="src: #video12"
+          videohandler2="src: #video12"
+          mixin="audio1"
+        >
+        </a-plane>
+        <a-entity
+          id="nriam"
+          material="shader:flat; src:#video12"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 0"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="Text8"
+          text="align: center; width: 10; color: black; value: Knife (Nriam). Made of steel, with a bronze and synthetic handle, and leather sheath. The Hmong knife is used for preparing meals, cutting small trees, clearing bushes, and performing other household work. "
+          visible="false"
+          position="0 -3.3 .01"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light
+        ></a-entity>
+      </a-entity>
+      <a-entity
+        id="picassodisplay12"
+        position="-5 5 -14.9"
+        rotation="0 0 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting12"
+          src="#picasso12"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #TextB; visible: true"
+          event-set__leave="_event: mouseleave; _target: #TextB; visible: false"
+          event-set__down="_event: click; _target: #lub; visible:true"
+          proxy-event__text="event: mouseenter; to: #TextB; as: fadein2"
+          proxy-event__enter="event: click; to: #lub; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #lub; as: fadeout"
+          videohandler="src: #video10"
+          videohandler2="src: #video10"
+          mixin="audio1"
+        >
+        </a-plane>
+        <a-entity
+          id="lub"
+          material="shader:flat; src:#video10"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 .01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="TextB"
+          text="align: center; width: 10; color: black; value: Backpack Basket (Kawm). Made of bamboo and string, Hmong use this basket to carry firewood, crops, and other supplies."
+          visible="false"
+          position="0 -3 0"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light
+        ></a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay13"
+        position="14.9 5 -10"
+        rotation="0 -90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting13"
+          src="#picasso13"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #Text10; visible: true"
+          event-set__leave="_event: mouseleave; _target: #Text10; visible: false"
+          event-set__down="_event: click; _target: #crossbow; visible:true"
+          proxy-event__text="event: mouseenter; to: #Text10; as: fadein2"
+          proxy-event__enter="event: click; to: #crossbow; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #crossbow; as: fadeout"
+          videohandler="src: #video8"
+          videohandler2="src: #video8"
+          mixin="audio1"
+        >
+        </a-plane>
+        <a-entity
+          id="crossbow"
+          material="shader:flat; src:#video8"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 0"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="Text10"
+          text="align: center; width: 10; color: black; value:Crossbow (Hneev). Made of wood, bamboo, and string. Hmong used this crossbow for hunting.\nA type of tree sap is applied to the arrow tips, which is poisonous to animals."
+          visible="false"
+          position="0 -3.2 .01"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light
+        ></a-entity>
+      </a-entity>
+
+      <a-entity
+        id="picassodisplay14"
+        position="14.9 5 -5"
+        rotation="0 -90 0"
+        mixin="frames"
+      >
+        <a-plane
+          id="picassopainting14"
+          src="#picasso14"
+          position="0 0 .04"
+          width="2.5"
+          height="3.5"
+          roughness="1"
+          event-set__enter="_event: mouseenter; _target: #Text11; visible: true"
+          event-set__leave="_event: mouseleave; _target: #Text11; visible: false"
+          event-set__down="_event: click; _target: #phom; visible:true"
+          proxy-event__text="event: mouseenter; to: #Text11; as: fadein2"
+          proxy-event__enter="event: click; to: #phom; as: fadein"
+          proxy-event__leave="event: mouseleave; to: #phom; as: fadeout"
+          videohandler="src: #video9"
+          videohandler2="src: #video9"
+          mixin="audio1"
+        >
+        </a-plane>
+        <a-entity
+          id="phom"
+          material="shader:flat; src:#video9"
+          geometry="primitive: plane; width: 6; height: 5"
+          position="0 4.7 .01"
+          rotation="0 0 0"
+          visible="false"
+          mixin="fading"
+        ></a-entity>
+
+        <a-entity
+          id="Text11"
+          text="align: center; width: 10; color: black; value:Rifle (Phom). Made with an iron barrel and wooden stack, metal bands, and nylon cord.The Hmong rifle is used mostly for hunting and fighting in war."
+          visible="false"
+          position="0 -3.2 .01"
+          animation__1="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 500; startEvents: fadein2"
+          animation__2="property: components.text.material.uniforms.opacity.value; to: 0; dur: 400; startEvents: fadeout2"
+        >
+          <a-light
+            type="point"
+            intensity=".15"
+            position="0 3 1"
+            decay=".5"
+            distance="4"
+          ></a-light
+        ></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
